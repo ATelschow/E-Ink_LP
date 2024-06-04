@@ -1,4 +1,4 @@
-#pragma region Wifi_MQTT
+
 void callback(char* topic, byte* payload, unsigned int length) 
 {
 // Serial.print("Nachricht eingetroffen [");
@@ -6,9 +6,9 @@ void callback(char* topic, byte* payload, unsigned int length)
 // Serial.print("]: ");
 for (int i=0;i<length;i++) 
    {
-   Serial.print((char)payload[i]);
+   // Serial.print((char)payload[i]);
    }
-   Serial.println("!"); 
+   // Serial.println("!"); 
 // Serial.println();
 String myString = String(topic); 
 if (myString == "tmpdraus")
@@ -59,7 +59,30 @@ else if (myString == "humwozi")
       }
    refresh++;
    }
-
+else if (myString == "tmpbado")
+   {
+   for (int i=0;i<10;i++) 
+   {
+   tmpbado_int[i]=0;
+   }
+   for (int i=0;i<length;i++) 
+      {
+      tmpbado_int[i]=payload[i];
+      }
+   refresh++;
+   }
+else if (myString == "humbado")
+   {
+   for (int i=0;i<10;i++) 
+   {
+   humbado_int[i]=0;
+   }
+   for (int i=0;i<length;i++) 
+      {
+      humbado_int[i]=payload[i];
+      }
+   refresh++;
+   }
       // Zeit = (((char)payload[0])-48) * 10;
    // Zeit = Zeit + (((char)payload[1])-48);
    // tmpdraus_int[0]=payload[0];
@@ -101,4 +124,3 @@ else if (myString == "humwozi")
 
 WiFiClient espClient;
 PubSubClient client(server1, 1885, callback, espClient);
-#pragma endregion Wifi_MQTT

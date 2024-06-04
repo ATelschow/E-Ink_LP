@@ -12,6 +12,7 @@ void helloWorld()
   display.firstPage();
   do
   {
+// 2,9 zoll display
     display.fillScreen(GxEPD_WHITE);
     display.setCursor(0, 10);
     display.print("Aussen");
@@ -21,19 +22,44 @@ void helloWorld()
     display.setCursor(0, 50);
     display.print(tmpdraus_int);
     display.setCursor(180, 50);
-    display.print(tmpwozi_int);
+   //  display.print(tmpwozi_int);
+    display.print(tmpbado_int);
     display.setCursor(0, 120);
     display.print(humdraus_int);
     display.print("%");
     display.setCursor(180, 120);
-    display.print(humwozi_int);
+   //  display.print(humwozi_int);
+    display.print(humbado_int);
     display.print("%");
     display.setFont(&FreeMonoBold9pt7b);
     display.setCursor(100, 95);
     display.print(batteryvoltage2);
-
     display.setCursor(100, 120);
     display.print(batteryvoltage);
+
+//******2,13 zoll Display
+   //  display.fillScreen(GxEPD_WHITE);
+   //  display.setCursor(0, 10);
+   //  display.print("Aussen");
+   //  display.setCursor(130, 10);
+   //  display.print("Innen");
+   //  display.setFont(&FreeMonoBold24pt7b);
+   //  display.setCursor(0, 50);
+   //  display.print(tmpdraus_int);
+   //  display.setCursor(135, 50);
+   //  display.print(tmpwozi_int);
+   //  display.setCursor(0, 120);
+   //  display.print(humdraus_int);
+   //  display.print("%");
+   //  display.setCursor(135, 120);
+   //  display.print(humwozi_int);
+   //  display.print("%");
+   //  display.setFont(&FreeMonoBold9pt7b);
+   //  display.setCursor(80, 95);
+   //  display.print(batteryvoltage2);
+
+   //  display.setCursor(80, 120);
+   //  display.print(batteryvoltage);
   }
   while (display.nextPage());
 //   display.setRotation(1);
